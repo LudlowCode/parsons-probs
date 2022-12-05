@@ -25,12 +25,13 @@
         <script src="../parsons.js"></script>
         <script>
         var initial = "function linear_search (list, value)\n" +
-                      "for each item in list\n" +
-                      "if item == value\n" +
-                      "return true\n" +
-                      "end if\n" +
-                      "end for\n" +
-                      "return false\n" +
+                      "  for each item in list\n" +
+                      "    if item == value\n" +
+                      "      return true\n" +
+                      "    else#distractor\n" +
+                      "    end if\n" +
+                      "  end for\n" +
+                      "  return false\n" +
                       "end function\n";
 
         function displayErrors(fb) {
