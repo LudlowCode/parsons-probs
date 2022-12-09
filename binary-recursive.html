@@ -7,8 +7,8 @@
         <script src="./lib/prettify.js"></script>
     </head>
     <body>
-        <h2>Bubble sort</h2>
-        <p>Drag and drop the lines into the box on the right. The constructed function should bubble the highest number to the end index and repeat for the second highest to end -1 etc, until the list is sorted.</p>
+        <h2>Recursive binary search</h2>
+        <p>Drag and drop the lines into the box on the right. The constructed function should return the index of the search item in a sorted list, or -1 if it is not found.</p>
         <p>Indentation matters, and there <em>may</em> be a line / lines that you shouldn't include.</p>
           
         <div id="sortableTrash" class="sortable-code"></div>
@@ -26,21 +26,21 @@
         <script src="./lib/lis.js"></script>
         <script src="./parsons.js"></script>
         <script>
-        var initial =   'Function bubbleSort(items)\n'+
-                        '  n = items.Length\n'+
-                        '  swapped = True //initially set swapped to True\n'+
-                        '  While n > 0 AND swapped\n'+
-                        '    swapped = False\n//reset at startr of iteration'+
-                        '    n = n - 1\n'+
-                        '    For index = 0 T0 n - 1\n'+
-                        '      If items[index] > items[index+1] then\n'+
-                        '        Swap(items[index], items[index+1])\n'+
-                        '        swapped = True\n'+
-                        '      End If\n'+
-                        '    End For\n'+
-                        '  End while\n'+
-                        '  Return items\n'+
-                        'End function\n';
+        var initial = 'def binary_search_recursive(items, start_index, end_index, search_item):\n'+
+                      '  """ a recursive binary search, returning the index of the item, or -1 if not in list. \n'+
+                      '  The start index should be 0 and the end index should be 1 less than the length of the list."""\n'+
+                      '  # base cases: item not in list or item is the search item\n'+
+                      '  if start_index > end_index:\n'+
+                      '    return -1\n'+
+                      '  middle_index = (start_index + end_index) // 2\n'+
+                      '  current_item = items[middle_index]\n'+
+                      '  if current_item == search_item:\n'+
+                      '    return middle_index\n'+
+                      '  elif current_item < search_item: # recursive case 1:\n'+
+                      '    return binary_search_recursive(items, middle_index + 1, end_index, search_item)\n'+
+                      '  else:\n'+
+                      '    return binary_search_recursive(items, start_index, middle_index - 1, search_item);\n';
+
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
                 alert(fb.errors[0]);
