@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Rearrange the algorithms</title>
+        <link href="./parsons.css" rel="stylesheet" />
+        <link href="./lib/prettify.css" rel="stylesheet" />
+        <script src="./lib/prettify.js"></script>
+    </head>
+    <body>
+        <h2>Binary search</h2>
+        <p>Drag and drop the lines into the box on the right. The constructed function should return the index of the search item in a sorted list, or -1 if it is not found.</p>
+        <p>Indentation matters, and there <em>may</em> be a line / lines that you shouldn't include.</p>
+          
+        <div id="sortableTrash" class="sortable-code"></div>
+        <div id="sortable" class="sortable-code">
+        </div>
+        <div style="clear:both;"></div>
+        <p>
+            <a href="#" id="newInstanceLink">New instance</a>
+            <a href="#" id="feedbackLink">Get feedback</a>
+        </p>
+        <script src="./lib/jquery.min.js"></script>
+        <script src="./lib/jquery-ui.min.js"></script>
+        <script src="./lib/jquery.ui.touch-punch.min.js"></script>
+        <script src="./lib/underscore-min.js"></script>
+        <script src="./lib/lis.js"></script>
+        <script src="./parsons.js"></script>
+        <script>
+        var initial = 'Function binarySearch(items, item_to_find)\n'+
+        '  found = False\n'+
+        '  first = 6\n'+
+        '  last = items.Length -1\n'+
+        '  While first <= last and found == False\n'+
+        '    midpoint = (first + last) DIV 2\n'+
+        '    If items[midpoint] == item_to_find then\n'+
+        '      found = True\n'+
+        '    Else\n'+
+        '      If items[midpoint] < item_to_find then\n'+
+        '        first = midpoint + 1\n'+
+        '      Else\n'+
+        '        last = midpoint - 1\n'+
+        '      End If\n'+
+        '    End If\n'+
+        '  End while\n'+
+        '  If found == True then\n'+
+        '    Return "Item found at position ", midpoint\n'+
+        '  Else\n'+
+        '    Return "Item not found"\n'+
+        '  End If\n'+
+        'End function  \n';
+
+        function displayErrors(fb) {
+            if(fb.errors.length > 0) {
+                alert(fb.errors[0]);
+            }
+        } 
+
+        $(document).ready(function(){
+            var parson = new ParsonsWidget({
+                'sortableId': 'sortable',
+                'trashId': 'sortableTrash',
+                'max_wrong_lines': 1,
+                'feedback_cb' : displayErrors
+            });
+            parson.init(initial);
+            parson.shuffleLines();
+            $("#newInstanceLink").click(function(event){
+                event.preventDefault();
+                parson.shuffleLines();
+            });
+            $("#feedbackLink").click(function(event){
+                event.preventDefault();
+                parson.getFeedback();
+            });
+        });
+        </script>
+        <footer><a href="index.html" >Take me back to the algorithms...</a></footer>
+    </body>
+</html>
