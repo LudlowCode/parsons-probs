@@ -9,6 +9,9 @@ puzzles is called two-dimensional (2D) Parsons problems. In Python, code indenta
 indented statement falls into the surrounding control structure, which has lower  indentation. That is, code blocks 
 are deﬁned by indentation instead of start and end symbols like curly braces. 
 
+I have built on the work of the authors below by adding some of the common algorithms you'll need for A-level Computer Science in the UK. Contributions and reporting of issues are both most welcome.
+
+
 Publications based on js-parsons
 --------------------------------
 
