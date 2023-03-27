@@ -37,9 +37,9 @@
         '    larger = []\n'+
         '    FOR i = start + 1 TO items.length:\n'+
         '      if items[i] < pivot_value:\n'+
-        '        smaller.append(pivot_value)\n'+
+        '        smaller.append(items[i])\n'+
         '      else:\n'+
-        '        larger.append(pivot_value)\n'+
+        '        larger.append(items[i])\n'+
         '    RETURN quick_sort(smaller) + [pivot_value] + quick_sort(larger)\n'+
         'END FUNCTION\n';
         
