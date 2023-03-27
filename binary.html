@@ -27,26 +27,22 @@
         <script src="./parsons.js"></script>
         <script>
         var initial = 'Function binarySearch(items, item_to_find)\n'+
-        '  found = False\n'+
-        '  first = 6\n'+
+        '  found = False //start by assuming not found\n'+
+        '  first = 0 //set initial start and end indices\n'+
         '  last = items.Length -1\n'+
         '  While first <= last and found == False\n'+
         '    midpoint = (first + last) DIV 2\n'+
         '    If items[midpoint] == item_to_find then\n'+
         '      found = True\n'+
-        '    Else\n'+
+        '    Else //item to find is not in the middle of sublist\n'+
         '      If items[midpoint] < item_to_find then\n'+
         '        first = midpoint + 1\n'+
-        '      Else\n'+
+        '      Else //item to find is smaller than midpoint\n'+
         '        last = midpoint - 1\n'+
-        '      End If\n'+
-        '    End If\n'+
-        '  End while\n'+
         '  If found == True then\n'+
         '    Return "Item found at position ", midpoint\n'+
-        '  Else\n'+
+        '  Else //end reached without finding item\n'+
         '    Return "Item not found"\n'+
-        '  End If\n'+
         'End function  \n';
 
         function displayErrors(fb) {
