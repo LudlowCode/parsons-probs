@@ -8,8 +8,7 @@
     </head>
     <body>
         <h2>Quick sort</h2>
-        <p>Drag and drop the lines into the box on the right. The constructed function should bubble the highest number to the end index and repeat for the second highest to end -1 etc, until the list is sorted.</p>
-        <p>Indentation matters, and there <em>may</em> be a line / lines that you shouldn't include.</p>
+        <p>Drag and drop the lines into the box on the right. This version is highly memory inefficient compared to an 'inplace' algorithm that swaps data within an array. Also, as a recursive algorithm, it will be less efficient than an equivalent purely iterative version.</p>
           
         <div id="sortableTrash" class="sortable-code"></div>
         <div id="sortable" class="sortable-code">
@@ -26,18 +25,23 @@
         <script src="./lib/lis.js"></script>
         <script src="./parsons.js"></script>
         <script>
-        var initial =   'Function insertionSort(items)\n'+
-        '  For index = 1 TO items.Length\n'+
-        '    current_item = items[index]\n'+
-        '    new_index = index\n'+
-        '    While new_index > 0 AND items[new_index -1] > current_item //correct position not yet found\n'+
-        '      items[new_index] = items[new_index -1] //shuffle item across\n'+
-        '      new_index = new_index -1\n'+
-        '    End while\n'+
-        '    items[new_index] = current_item //place item in correct position\n'+
-        '  End For\n'+
-        '  Return items\n'+
-        'End function   \n';
+        var initial =   'FUNCTION quick_sort(items):\n'+
+        '  // Base case: stop when the partition contains a single item\n'+
+        '  IF items.length <= 1:\n'+
+        '    RETURN items\n'+
+        '  // Otherwise create smaller and larger sublists and recursively call\n'+
+        '  // quick_sort on those sublists and recombine the sorted lists with the pivot\n'+
+        '  ELSE:\n'+
+        '    pivot_value = items[0]\n'+
+        '    smaller = []\n'+
+        '    larger = []\n'+
+        '    FOR i = start + 1 TO items.length:\n'+
+        '      if items[i] < pivot_value:\n'+
+        '        smaller.append(pivot_value)\n'+
+        '      else:\n'+
+        '        larger.append(pivot_value)\n'+
+        '    RETURN quick_sort(smaller) + [pivot_value] + quick_sort(larger)\n'+
+        'END FUNCTION\n';
         
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
