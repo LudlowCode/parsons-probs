@@ -32,10 +32,11 @@
         '  // Otherwise create smaller and larger sublists and recursively call\n'+
         '  // quick_sort on those sublists and recombine the sorted lists with the pivot\n'+
         '  ELSE:\n'+
+        '    //set pivot as first value and create empty smaller and larger lists'+
         '    pivot_value = items[0]\n'+
         '    smaller = []\n'+
         '    larger = []\n'+
-        '    FOR i = start + 1 TO items.length:\n'+
+        '    FOR i = 1 TO items.length:\n'+
         '      if items[i] < pivot_value:\n'+
         '        smaller.append(items[i])\n'+
         '      else:\n'+
