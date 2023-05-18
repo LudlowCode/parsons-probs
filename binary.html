@@ -30,20 +30,21 @@
         '  found = False //start by assuming not found\n'+
         '  first = 0 //set initial start and end indices\n'+
         '  last = items.Length -1\n'+
-        '  While first <= last and found == False\n'+
+        '  while first <= last and found == False\n'+
         '    midpoint = (first + last) DIV 2\n'+
-        '    If items[midpoint] == item_to_find then\n'+
-        '      found = True\n'+
-        '    Else //item to find is not in the middle of sublist\n'+
-        '      If items[midpoint] < item_to_find then\n'+
+        '    if items[midpoint] == item_to_find then\n'+
+        '      found = true\n'+
+        '    else //item to find is not in the middle of sublist\n'+
+        '      if items[midpoint] < item_to_find then\n'+
         '        first = midpoint + 1\n'+
-        '      Else //item to find is smaller than midpoint\n'+
+        '      else //item to find is smaller than midpoint\n'+
         '        last = midpoint - 1\n'+
-        '  If found == True then\n'+
-        '    Return "Item found at position ", midpoint\n'+
-        '  Else //end reached without finding item\n'+
-        '    Return "Item not found"\n'+
-        'End function  \n';
+        '  end while\n'+
+        '  if found == True then\n'+
+        '    return "Item found at position ", midpoint\n'+
+        '  else //end reached without finding item\n'+
+        '    return -1\n'+
+        'end function  \n';
 
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
