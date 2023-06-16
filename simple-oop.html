@@ -31,15 +31,15 @@
         '  //constructor to create new Pet object:\n'+
         '  public procedure new(givenName)\n'+
         '    name=givenName\n'+
-        '  endprocedure\n'+
-        'endclass\n'+
+        '  endprocedure //end of Pet constructor\n'+
+        'end class //end of Pet class\n'+
         'class Dog inherits Pet\n'+
         '  private breed\n'+
         '  public procedure new(givenName, givenBreed)\n'+
         '    super.new(givenName)\n'+
         '    breed=givenBreed\n'+
-        '  endprocedure\n'+
-        'endclass\n'+
+        '  endprocedure //end of Dog constructor\n'+
+        'end class //end of Dog class\n'+
         'Finally, call the Dog constructor to create a new object:\n'+
         'myDog = new Dog("Fido","Scottish Terrier")\n';
         
