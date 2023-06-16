@@ -1,3 +1,5 @@
+The webpage, where you can play with these puzzles, should be available here: https://js-parsons.ludlowcode.github.io/
+
 Parsons Programming Puzzles
 ==========================
 
