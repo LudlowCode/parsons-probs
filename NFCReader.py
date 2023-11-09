@@ -11,7 +11,7 @@ COMMAND = [0xFF, 0xCA, 0x00, 0x00, 0x00] #handshake cmd needed to initiate data 
 
 # get all the available readers
 r = readers()
-print "Available readers:", r
+print("Available readers:", r)
 
 def stringParser(dataCurr):
 #--------------String Parser--------------#
@@ -51,22 +51,22 @@ def readTag(page):
 
             #only allows new tags to be worked so no duplicates
             if(dataCurr is not None):
-                print dataCurr
+                print (dataCurr)
                 break
             else:
-                print "Something went wrong. Page " + str(page)
+                print ("Something went wrong. Page " + str(page))
                 break
-        except Exception,e: 
+        except Exception as e: 
             if(waiting_for_beacon ==1):
                 continue
             else:
                 readingLoop=0
-                print str(e)
+                print (str(e))
                 break
 
 def writeTag(page, value):
     if type(value) != str:
-        print "Value input should be a string"
+        print ("Value input should be a string")
         exit()
     while(1):
         if len(value) == 8:
@@ -78,12 +78,12 @@ def writeTag(page, value):
                 # Let's write a page Page 9 is usually 00000000
                 resp = connection.transmit(WRITE_COMMAND)
                 if resp[1] == 144:
-                    print "Wrote " + value + " to page " + str(page)
+                    print("Wrote " + value + " to page " + str(page))
                     break
-            except Exception, e:
+            except Exception as e:
                 continue
         else:
-            print "Must have a full 4 byte write value"
+            print("Must have a full 4 byte write value")
             break
 
 if __name__ == "__main__":
@@ -110,7 +110,7 @@ if __name__ == "__main__":
     else:
         reader = r[0]
 
-    print "Using:", reader
+    print("Using:", reader)
 
     #Disabling wait for answer if wait == 0
     if args.wait:
@@ -122,7 +122,7 @@ if __name__ == "__main__":
     else:
         waiting_for_beacon = 1
 
-    print "Using:", reader
+    print("Using:", reader)
 
     #Only going to write one page at a time
     if args.write:
