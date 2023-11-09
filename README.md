@@ -1,4 +1,4 @@
-The webpage, where you can play with these puzzles, should be available here:[[ https://ludlowcode.github.io/js-parsons/](https://ludlowcode.github.io/parsons-probs/)]([https://ludlowcode.github.io/js-parsons/](https://ludlowcode.github.io/parsons-probs/))
+The webpage, where you can play with these puzzles, should be available here: https://ludlowcode.github.io/parsons-probs/
 
 Parsons Programming Puzzles
 ==========================
