@@ -26,16 +26,17 @@
         <script src="./parsons.js"></script>
         <script>
         var initial =   'FUNCTION quick_sort(items):\n'+
-        '  // Base case: stop when the partition contains a single item\n'+
+        '  // Base case: stop when the partition contains a single item:\n'+
         '  IF items.length <= 1:\n'+
         '    RETURN items\n'+
-        '  // Otherwise create smaller and larger sublists and recursively call\n'+
-        '  // quick_sort on those sublists and recombine the sorted lists with the pivot\n'+
+        '  // Otherwise, create smaller and larger sublists and recursively call..\n'+
+        '  // ..quick_sort on those sublists and recombine the sorted lists with the pivot:\n'+
         '  ELSE:\n'+
-        '    //set pivot as first value and create empty smaller and larger lists\n'+
+        '    //set pivot as first value and create empty smaller and larger list:s\n'+
         '    pivot_value = items[0]\n'+
         '    smaller = []\n'+
         '    larger = []\n'+
+        '    //iterate through the other items and add to appropriate sublist:'
         '    FOR i = 1 TO items.length:\n'+
         '      if items[i] < pivot_value:\n'+
         '        smaller.append(items[i])\n'+
