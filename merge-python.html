@@ -26,11 +26,14 @@
         <script>
         var initial =   'from heapq import merge\n'+
         'def merge_sort(m):\n'+
+        '  # Base case a 1 item list is sorted so return it..\n'+
         '  if len(m) <= 1:\n'+
         '    return m\n'+
+        '  # Otherwise split it two, merge sort the two and combine.. \n'+
         '  middle = len(m) // 2\n'+
         '  left = m[:middle]\n'+
         '  right = m[middle:]\n'+
+        '  left = merge_sort(left)\n'+
         '  right = merge_sort(right)\n'+
         '  return list(merge(left, right))\n';
 
