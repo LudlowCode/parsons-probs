@@ -133,3 +133,6 @@ li.correctPosition, .testcase.pass {
     display: block;
     color: red;
 }
+footer{
+    position: bottom;
+}
