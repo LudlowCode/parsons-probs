@@ -1,37 +1,42 @@
 <!doctype html>
 <html>
     <head>
-        <title>Rearrange the algorithms</title>
+        <title>Simple js-parsons example assignment</title>
         <link href="./parsons.css" rel="stylesheet" />
         <link href="./lib/prettify.css" rel="stylesheet" />
         <script src="./lib/prettify.js"></script>
-    </head>
-    <body>
-        <h2>Linear search</h2>
-        <p>Drag and drop the lines into the box on the right. The constructed function should return true if the value is in the list, otherwise false. 
-          Indentation matters, and there may be a line / lines that you shouldn't include.</p>
-        <div id="sortableTrash" class="sortable-code"></div>
-        <div id="sortable" class="sortable-code">
-        </div>
-        <div style="clear:both;"></div>
-        <p>
-            <button class='restart' href="#" id="newInstanceLink">Start again</button>
-            <button class='submit' href="#" id="feedbackLink">Check my answer</button>
-        </p>
         <script src="./lib/jquery.min.js"></script>
         <script src="./lib/jquery-ui.min.js"></script>
         <script src="./lib/jquery.ui.touch-punch.min.js"></script>
         <script src="./lib/underscore-min.js"></script>
         <script src="./lib/lis.js"></script>
         <script src="./parsons.js"></script>
+    </head>
+    <body>
+        <h2>Simple js-parsons example assignment</h2>
+        <p>Construct a function by drag&amp;dropping and reordering lines from the
+            left to the right.
+            The constructed function should return True if the parameter is True and
+            return False otherwise.</p>
+        <p><strong>Note:</strong> The correct solution is obviously a dumb way to do
+            it. This exercise is merely trying to give an example of a Parson's
+            puzzle with js-parsons, not teach you Python :)</p>
+        <div id="sortableTrash" class="sortable-code"></div>
+        <div id="sortable" class="sortable-code">
+        </div>
+        <div style="clear:both;"></div>
+        <p>
+            <a href="#" id="newInstanceLink">New instance</a>
+            <a href="#" id="feedbackLink">Get feedback</a>
+        </p>
+ 
         <script>
-        var initial = 'def factorial(n):\n' +
-                      '  #base case\n' +
-                      '  if n == 1:\n' +
-                      '    return 1\n' +
-                      '  #recursive case\n' +
-                      '  else:\n'+
-                      '    return n * factorial(n-1)\n';
+        var initial = 'def is_true(boolean_value):\n' +
+                      '  if boolean_value:\n' +
+                      '    return True\n' +
+                      '  return False\n' +
+                      '  return true #distractor\n' 
+
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
                 alert(fb.errors[0]);
@@ -56,7 +61,7 @@
                 parson.getFeedback();
             });
         });
-        </script>
+            </script>
         <footer><a href="index.html" >Take me back to the algorithms...</a></footer>
     </body>
 </html>

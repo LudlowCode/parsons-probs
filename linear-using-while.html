@@ -7,10 +7,9 @@
         <script src="./lib/prettify.js"></script>
     </head>
     <body>
-        <h2>Recursive binary search</h2>
-        <p>Drag and drop the lines into the box on the right. The constructed function should return the index of the search item in a sorted list, or -1 if it is not found.</p>
-        <p>Indentation matters, and there <em>may</em> be a line / lines that you shouldn't include.</p>
-          
+        <h2>Linear search</h2>
+        <p>Drag and drop the lines into the box on the right. The constructed function should return the index of the target if the target is in the list, otherwise -1 to show that it is not in there. 
+          Indentation matters, and there may be a line / lines that you shouldn't include.</p>
         <div id="sortableTrash" class="sortable-code"></div>
         <div id="sortable" class="sortable-code">
         </div>
@@ -26,20 +25,15 @@
         <script src="./lib/lis.js"></script>
         <script src="./parsons.js"></script>
         <script>
-        var initial = 'def binary_search_recursive(items, start_index, end_index, search_item):\n'+
-                      '  """ a recursive binary search, returning the index of the item, or -1 if not in list. \n'+
-                      '  The start index should be 0 and the end index should be 1 less than the length of the list."""\n'+
-                      '  # base cases: item not in list or item is the search item\n'+
-                      '  if start_index > end_index:\n'+
-                      '    return -1\n'+
-                      '  middle_index = (start_index + end_index) // 2\n'+
-                      '  current_item = items[middle_index]\n'+
-                      '  if current_item == search_item:\n'+
-                      '    return middle_index\n'+
-                      '  elif current_item < search_item: # recursive case 1:\n'+
-                      '    return binary_search_recursive(items, middle_index + 1, end_index, search_item)\n'+
-                      '  else:\n'+
-                      '    return binary_search_recursive(items, start_index, middle_index - 1, search_item);\n';
+        var initial = 'def linear_search(arr, target):\n' +
+                      '  counter = 0\n' +
+                      '  while counter < len(arr):\n' +
+                      '    if arr[counter] == target:\n' +
+                      '      return counter\n' +
+                      '    else:#distractor\n' +
+                      '    counter = counter + 1\n' +
+                      '    counter =+ 1#distractor\n' +
+                      '  return -1\n' 
 
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
