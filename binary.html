@@ -27,11 +27,10 @@
         <script src="./parsons.js"></script>
         <script>
             var initial = 'def binarySearch(items, item_to_find):\n'+
-        '  found = False #start by assuming not found\n'+
         '  start_index = 0 #set initial start and end indices\n'+
         '  end_index = len(items) -1\n'+
-        '  while start_index <= end_index and found == False:\n'+
-        '    midpoint = (start_index + end_index) // 2 #integer division DIV)\n'+
+        '  while start_index <= end_index: #the list section has at least 1 item\n'+
+        '    midpoint = (start_index + end_index) // 2 #integer DIV\n'+
         '    current_item = items[midpoint]\n'+
         '    if current_item == item_to_find:\n'+
         '      return midpoint\n'+
