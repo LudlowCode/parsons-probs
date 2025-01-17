@@ -27,11 +27,10 @@
         <script src="./parsons.js"></script>
         <script>
         var initial = 'def binary_search_recursive(items, start_index, end_index, search_item):\n'+
-                      '  """ a recursive binary search, returning the index of the item, or -1 if not in list. \n'+
-                      '  The start index should be 0 and the end index should be 1 less than the length of the list."""\n'+
-                      '  # base cases: item not in list or item is the search item\n'+
+                      '  # base case 1: item not in the list if the list is empty...\n'+
                       '  if start_index > end_index:\n'+
                       '    return -1\n'+
+                      '  check if the middle item is the target...\n'+
                       '  middle_index = (start_index + end_index) // 2\n'+
                       '  current_item = items[middle_index]\n'+
                       '  if current_item == search_item:\n'+

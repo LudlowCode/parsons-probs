@@ -26,25 +26,21 @@
         <script src="./lib/lis.js"></script>
         <script src="./parsons.js"></script>
         <script>
-        var initial = 'Function binarySearch(items, item_to_find)\n'+
-        '  found = False //start by assuming not found\n'+
-        '  first = 0 //set initial start and end indices\n'+
-        '  last = items.Length -1\n'+
-        '  while first <= last and found == False\n'+
-        '    midpoint = (first + last) DIV 2\n'+
-        '    if items[midpoint] == item_to_find then\n'+
-        '      found = true\n'+
-        '    else //item to find is not in the middle of sublist\n'+
-        '      if items[midpoint] < item_to_find then\n'+
-        '        first = midpoint + 1\n'+
-        '      else //item to find is smaller than midpoint\n'+
-        '        last = midpoint - 1\n'+
-        '  end while\n'+
-        '  if found == True then\n'+
-        '    return "Item found at position ", midpoint\n'+
-        '  else //end reached without finding item\n'+
-        '    return -1\n'+
-        'end function  \n';
+            var initial = 'def binarySearch(items, item_to_find):\n'+
+        '  found = False #start by assuming not found\n'+
+        '  start_index = 0 #set initial start and end indices\n'+
+        '  end_index = len(items) -1\n'+
+        '  while start_index <= end_index and found == False:\n'+
+        '    midpoint = (start_index + end_index) // 2 #integer division DIV)\n'+
+        '    current_item = items[midpoint]\n'+
+        '    if current_item == item_to_find:\n'+
+        '      return midpoint\n'+
+        '    else: #item to find is not in the middle of sublist\n'+
+        '      if current_item < item_to_find:\n'+
+        '        start_index = midpoint + 1\n'+
+        '      else: #item to find is smaller than midpoint\n'+
+        '        end_index = midpoint - 1\n'+
+        '  return -1 #if we got to this stage the item was not in the sorted list\n';
 
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
@@ -69,7 +65,7 @@
                 event.preventDefault();
                 parson.getFeedback();
             });
-        });
+        });        
         </script>
         <footer><a href="index.html" >Take me back to the algorithms...</a></footer>
     </body>
