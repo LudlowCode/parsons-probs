@@ -28,18 +28,19 @@
         <script src="./parsons.js"></script>
         <script>
             var initial = 'def insertionSort(items)\n'+
-        '  length = len(items)\n'+
         '  #start by inserting the second item into the sorted list and repeat for the others..\n'+
-        '  for index in range(1,length)\n'+
+        '  for index in range(1,leng(items))\n'+
         '    current_item = items[index]\n'+
         '    new_position = index\n'+
-        '    while (new_position > 0) and (items[new_position -1] > current_item) #correct position not yet found\n'+
+        '    # loop until the correct position for the current_item is found...\n'+
+        '    while (new_position > 0) and (items[new_position -1] > current_item)\n'+
         '      #shift item right that is bigger than current_item..\n'+
         '      items[new_position] = items[new_position -1]\n'+
+        '      # get ready to look at the next position..\n'+
         '      new_position = new_position -1\n'+
         '      new_position = new_position +1#distractor\n'+
-        '    #place current item in its correct position..\n'+
-        '    items[new_position] = current_item //place item in correct position\n';
+        '    #once we get here, we have found the correct new position to put the current_item into\n'+
+        '    items[new_position] = current_item\n';
 
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
