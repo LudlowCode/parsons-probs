@@ -7,8 +7,9 @@
         <script src="./lib/prettify.js"></script>
     </head>
     <body>
-        <h2>Bubble sort</h2>
-        <p>Drag and drop the lines into the box on the right. The constructed function should bubble the highest number to the end index and repeat for the second highest to end -1 etc, until the list is sorted. This is an inefficient simplified version. Go back to the algorithms for a more optimised version, but be aware that no bubble sort will ever be efficient enough to use on a large data set. That's what quick sort and merge sort are for.</p>
+        <h2>Insertion sort in Python</h2>
+        <p>Drag and drop the lines into the box on the right. The constructed function should grow the sorted list by one item each iteration. Unlike bubble sort, after the first pass, insertion sort has 'seen' two items, rather than all of them.</p>
+        
         <p>Indentation matters, and there <em>may</em> be a line / lines that you shouldn't include.</p>
           
         <div id="sortableTrash" class="sortable-code"></div>
@@ -26,17 +27,19 @@
         <script src="./lib/lis.js"></script>
         <script src="./parsons.js"></script>
         <script>
-            var initial = 'def bubble_sort(items):\n'+
+            var initial = 'def insertionSort(items)\n'+
         '  length = len(items)\n'+
-        '  for pass_number in range(1,length)\n'+
-        '  for pass_number in range(1,length)#distractor\n'+
-        '  for i in range(length)\n'+
-        '    for i in range(length - pass_number)\n'+
-        '      if items[index] > items[index+1]:\n'+
-        '        temp = items[index]\n'+
-        '        items[index] = items[index+1]\n'+
-        '        items[index+1] = items[index]#distractor\n'+
-        '        items[index+1] = temp\n';
+        '  #start by inserting the second item into the sorted list and repeat for the others..\n'+
+        '  for index in range(1,length)\n'+
+        '    current_item = items[index]\n'+
+        '    new_position = index\n'+
+        '    while (new_position > 0) and (items[new_position -1] > current_item) #correct position not yet found\n'+
+        '      #shift item right that is bigger than current_item..\n'+
+        '      items[new_position] = items[new_position -1]\n'+
+        '      new_position = new_position -1\n'+
+        '      new_position = new_position +1#distractor\n'+
+        '    #place current item in its correct position..\n'+
+        '    items[new_position] = current_item //place item in correct position\n';
 
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
