@@ -7,7 +7,7 @@
         <script src="./lib/prettify.js"></script>
     </head>
     <body>
-        <h2>Bubble sort</h2>
+        <h2>Bubble sort - Python version</h2>
         <p>Drag and drop the lines into the box on the right. The constructed function should bubble the highest number to the end index and repeat for the second highest to end -1 etc, until the list is sorted. This is an inefficient simplified version. Go back to the algorithms for a more optimised version, but be aware that no bubble sort will ever be efficient enough to use on a large data set. That's what quick sort and merge sort are for.</p>
         <p>Indentation matters, and there <em>may</em> be a line / lines that you shouldn't include.</p>
           
@@ -28,10 +28,9 @@
         <script>
             var initial = 'def bubble_sort(items):\n'+
         '  length = len(items)\n'+
-        '  for pass_number in range(1,length)\n'+
-        '  for pass_number in range(1,length)#distractor\n'+
-        '  for i in range(length)\n'+
-        '    for i in range(length - pass_number)\n'+
+        '  for pass_number in range(1,length):#distractor\n'+
+        '  for i in range(length):\n'+
+        '    for i in range(length - pass_number):\n'+
         '      if items[index] > items[index+1]:\n'+
         '        temp = items[index]\n'+
         '        items[index] = items[index+1]\n'+
