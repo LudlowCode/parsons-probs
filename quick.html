@@ -26,15 +26,11 @@
         <script src="./parsons.js"></script>
         <script>
         var initial = 'def quick_sort(items):\n'+
-    '  # Base case: a list of zero or one elements is already sorted..\n'+
-    '  if len(items) <= 1:\n'+
+    '  if len(items) <= 1: # base case\n'+
     '    return items\n'+
-    '  # Recursive case: make smaller and bigger sublists, QuickSort them then combine..\n'+
-    '  else:\n'+
-    '    # Choose pivot (in this case we will use the first element)..\n'+
-    '    pivot = items[0]\n'+
-    '    # initialise sublists..\n'+
-    '    smaller = []\n'+
+    '  else: # Recursive case\n'+
+    '    pivot = items[0] # choose a pivot (one option is to pick the first)\n'+
+    '    smaller = []#..initialise sublists..\n'+
     '    bigger = []\n'+
     '    # iterate through the other items and add to a sublist..\n'+
     '    for item in items[1:len(items)]:\n'+
