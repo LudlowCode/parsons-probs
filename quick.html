@@ -25,25 +25,25 @@
         <script src="./lib/lis.js"></script>
         <script src="./parsons.js"></script>
         <script>
-        var initial =   'FUNCTION quick_sort(items):\n'+
-        '  // Base case: stop when the partition contains a single item:\n'+
-        '  IF items.length <= 1:\n'+
-        '    RETURN items\n'+
-        '  // Otherwise, create smaller and larger sublists and recursively call..\n'+
-        '  // ..quick_sort on those sublists, recombining the sorted lists with pivot:\n'+
-        '  ELSE:\n'+
-        '    // Set pivot as first value and create empty smaller and larger lists:\n'+
-        '    pivot_value = items[0]\n'+
-        '    smaller = []\n'+
-        '    larger = []\n'+
-        '    // Iterate through the other items and add to appropriate sublist\n' +
-        '    FOR i = 1 TO items.length:\n'+
-        '      if items[i] < pivot_value:\n'+
-        '        smaller.append(items[i])\n'+
-        '      else:\n'+
-        '        larger.append(items[i])\n'+
-        '    RETURN quick_sort(smaller) + [pivot_value] + quick_sort(larger)\n'+
-        'END FUNCTION\n';
+        var initial = 'def quick_sort(items):\n'+
+    '  # Base case: a list of zero or one elements is already sorted..\n'+
+    '  if len(items) <= 1:\n'+
+    '    return items\n'+
+    '  # Recursive case: make smaller and bigger sublists, QuickSort them then combine..\n'+
+    '  else:\n'+
+    '    # Choose pivot (in this case we will use the first element)..\n'+
+    '    pivot = items[0]\n'+
+    '    # initialise sublists..\n'+
+    '    smaller = []\n'+
+    '    bigger = []\n'+
+    '    # iterate through the other items and add to a sublist..\n'+
+    '    for item in items[1:len(items)]:\n'+
+    '      if item < pivot:\n'+
+    '        smaller.append(item)\n'+
+    '      else:\n'+
+    '        bigger.append(item)\n'+
+    '    # Recursively sort and concatenate..\n'+
+    '    return quick_sort(smaller) + [pivot] + quick_sort(bigger)\n';
         
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
