@@ -7,10 +7,8 @@
         <script src="./lib/prettify.js"></script>
     </head>
     <body>
-        <h2>Insertion sort in Python</h2>
-        <p>Drag and drop the lines into the box on the right. The constructed function should grow the sorted list by one item each iteration. Unlike bubble sort, after the first pass, insertion sort has 'seen' two items, rather than all of them.</p>
-        
-        <p>Indentation matters, and there <em>may</em> be a line / lines that you shouldn't include.</p>
+        <h2>Object-oriented programming</h2>
+        <p>This is a pseudocode implementation of a simple Pet class and its subclass, Dog. Dog inherits all the attributes and methods of Pet and extends it with a breed attribute.</p>
           
         <div id="sortableTrash" class="sortable-code"></div>
         <div id="sortable" class="sortable-code">
@@ -27,21 +25,19 @@
         <script src="./lib/lis.js"></script>
         <script src="./parsons.js"></script>
         <script>
-            var initial = 'def insertionSort(items):\n'+
-        '  # start by inserting the second item into the sorted list and repeat for the others..\n'+
-        '  for index in range(1,len(items)):\n'+
-        '    current_item = items[index]\n'+
-        '    new_position = index\n'+
-        '    # loop until the correct position for the current_item is found...\n'+
-        '    while (new_position > 0) and (items[new_position -1] > current_item):\n'+
-        '      # shift item right that is bigger than current_item..\n'+
-        '      items[new_position] = items[new_position -1]\n'+
-        '      # get ready to look at the next position..\n'+
-        '      new_position = new_position -1\n'+
-        '      new_position = new_position +1#distractor\n'+
-        '    # once we get here, we have found the correct new position to put the current_item into\n'+
-        '    items[new_position] = current_item\n';
-
+        var initial =   'class Pet:\n'+
+                        '    #Constructor method for the superclass..\n'+
+                        '    def __init__(self, theName):\n'+
+                        '        __name = theName\n'+
+                        '# Dog is a Pet..\n'+
+                        'class Dog(Pet):\n'+
+                        '    #Constructor method for the subclass..\n'+
+                        '    def __init__(self, theName, theBreed):\n'+
+                        '        super().__init__(theName)\n'+
+                        '        __breed = theBreed\n'+
+                        '# Call the subclass constructor method\n'+
+                        'myDog = Dog("Fred", "Cocker spaniel")\n';
+        
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
                 alert(fb.errors[0]);
@@ -65,7 +61,7 @@
                 event.preventDefault();
                 parson.getFeedback();
             });
-        });        
+        });
         </script>
         <footer><a href="index.html" >Take me back to the algorithms...</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://ludlowcode.github.io/revision-materials/" target="_blank">Dave's Revision World</a></footer>
     </body>
