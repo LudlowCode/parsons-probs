@@ -8,7 +8,7 @@
     </head>
     <body>
         <h2>Object-oriented programming</h2>
-        <p>This is a Python implementation of a BankAccount class. Encapsulation is achieved with private attributes and public methods. This would enable control over how attributes are changes, such as validation etc. In reality, balance would probably only be changed through deposit, withdraw and transfer procedures.</p>
+        <p>This is a Python implementation of a BankAccount class. Encapsulation is achieved with private attributes and public methods, including 'getters and setters'. This would enable control over how attributes are changed, such as validation etc. In reality, balance would probably only be changed through deposit, withdraw and transfer procedures, so no set balance is written.</p>
           
         <div id="sortableTrash" class="sortable-code"></div>
         <div id="sortable" class="sortable-code">
@@ -27,15 +27,15 @@
         <script>
         var initial =   
         'class BankAccount:\n'+
-        '  def __init__(self, the_account_holder)\n'+
+        '  def __init__(self, the_account_holder):\n'+
         '    __account_holder = the_account_holder\n'+
         '    __balance = 0\n'+
-        '  def get_account_holder():\n'+
+        '  def get_account_holder(self):\n'+
         '   return __account_holder\n'+
-        '  def set_account_holder(new_account_holder):\n'+
+        '  def set_account_holder(self, new_account_holder):\n'+
         '   __account_holder = new_account_holder\n'+
-        '  def get_balance()\n'+
-        '    return balance\n';
+        '  def get_balance(self)\n'+
+        '    return __balance\n';
 
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
