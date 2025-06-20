@@ -28,12 +28,17 @@
         var initial =   
         'public class BankAccount\n'+
         '  private balance\n'+
-        '  public procedure new()\n'+
+        '  private accountHolder\n'+
+        '  public procedure new(anAccountHolder)\n'+
         '    balance = 0\n'+
-        '  end procedure //end constructor\n'+
-        '  public procedure setBalance(newBalance)\n'+
-        '   balance = newBalance\n'+
-        '  end procedure //end setter\n'+
+        '    accountHolder = anAccountHolder\n'+
+        '  end procedure\n'+
+        '  public function getAccountHolder()\n'+
+        '    return accountHolder\n'+
+        '  end function\n'+
+        '  public procedure setAccountHolder(newAccountHolder)\n'+
+        '   accountHolder = newAccountHolder\n'+
+        '  end procedure\n'+
         '  public function getBalance()\n'+
         '    return balance\n'+
         '  end function\n'+
