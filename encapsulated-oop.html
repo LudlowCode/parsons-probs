@@ -27,21 +27,21 @@
         <script>
         var initial =   
         'public class BankAccount\n'+
-        '  private balance\n'+
+        '  private balance\n // we will put balance before account holder every time'+
         '  private accountHolder\n'+
         '  public procedure new(anAccountHolder)\n'+
         '    balance = 0\n'+
         '    accountHolder = anAccountHolder\n'+
-        '  end procedure\n'+
-        '  public function getAccountHolder()\n'+
-        '    return accountHolder\n'+
-        '  end function\n'+
-        '  public procedure setAccountHolder(newAccountHolder)\n'+
-        '   accountHolder = newAccountHolder\n'+
-        '  end procedure\n'+
+        '  end procedure //end of constructor\n'+
         '  public function getBalance()\n'+
         '    return balance\n'+
-        '  end function\n'+
+        '  end function //end of getBalance\n'+
+        '  public function getAccountHolder()\n'+
+        '    return accountHolder\n'+
+        '  end function //end of getAccountHolder\n'+
+        '  public procedure setAccountHolder(newAccountHolder)\n'+
+        '   accountHolder = newAccountHolder\n'+
+        '  end procedure //end of setAccountHolder\n'+
         'end class';
 
         function displayErrors(fb) {
