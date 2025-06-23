@@ -28,11 +28,14 @@
         var initial = 'public class BankAccount\n'+
         '  private balance // we will put balance before account holder every time\n'+
         '  private accountHolder\n'+
+        '  //The first method is a constructor, which initialises balance and account holder..\n'+
         '  public procedure new(anAccountHolder)\n'+
         '    balance = 0\n'+
         '    accountHolder = anAccountHolder\n'+
+        '  //Next we will put a getter method for balance..\n'+
         '  public function getBalance()\n'+
         '    return balance\n'+
+        '  //Finally we will put our getter and setter for accountHolder..\n'+
         '  public function getAccountHolder()\n'+
         '    return accountHolder\n'+
         '  public procedure setAccountHolder(newAccountHolder)\n'+
