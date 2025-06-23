@@ -8,7 +8,7 @@
     </head>
     <body>
         <h2>Object-oriented programming</h2>
-        <p>This is a pseudocode implementation of a BankAccount class. Encapsulation is achieved with private attributes and public methods. This would enable control over how attributes are changes, such as validation etc. In reality, balance would probably only be changed through deposit, withdraw and transfer procedures.</p>
+        <p>This is a pseudocode implementation of a BankAccount class. Encapsulation is achieved with private attributes and public methods. This would enable control over how attributes are changes, such as validation etc. In reality, balance would probably only be changed through deposit, withdraw and transfer procedures. Lines like 'end procedure' have been removed for simplicity.</p>
           
         <div id="sortableTrash" class="sortable-code"></div>
         <div id="sortable" class="sortable-code">
@@ -31,17 +31,12 @@
         '  public procedure new(anAccountHolder)\n'+
         '    balance = 0\n'+
         '    accountHolder = anAccountHolder\n'+
-        '  end procedure //end of constructor\n'+
         '  public function getBalance()\n'+
         '    return balance\n'+
-        '  end function //end of getBalance\n'+
         '  public function getAccountHolder()\n'+
         '    return accountHolder\n'+
-        '  end function //end of getAccountHolder\n'+
         '  public procedure setAccountHolder(newAccountHolder)\n'+
-        '   accountHolder = newAccountHolder\n'+
-        '  end procedure //end of setAccountHolder\n'+
-        'end class\n';
+        '   accountHolder = newAccountHolder\n';
 
         function displayErrors(fb) {
             if(fb.errors.length > 0) {
