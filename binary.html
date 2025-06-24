@@ -26,19 +26,18 @@
         <script src="./lib/lis.js"></script>
         <script src="./parsons.js"></script>
         <script>
-            var initial = 'def binarySearch(items, item_to_find):\n'+
+            var initial = 'def binarySearch(items, target):\n'+
         '  start_index = 0 #set initial start and end indices\n'+
         '  end_index = len(items) -1\n'+
         '  while start_index <= end_index: #the list section has at least 1 item\n'+
         '    midpoint = (start_index + end_index) // 2 #integer DIV\n'+
         '    current_item = items[midpoint]\n'+
-        '    if current_item == item_to_find:\n'+
+        '    if current_item == target:\n'+
         '      return midpoint\n'+
-        '    else: #item to find is not in the middle of sublist\n'+
-        '      if current_item < item_to_find:\n'+
-        '        start_index = midpoint + 1\n'+
-        '      else: #item to find is smaller than midpoint\n'+
-        '        end_index = midpoint - 1\n'+
+        '    elif current_item < target: #target is bigger than midpoint\n'+
+        '      start_index = midpoint + 1\n'+
+        '    else: #target is smaller than midpoint\n'+
+        '      end_index = midpoint - 1\n'+
         '  return -1 #if we got to this stage the item was not in the sorted list\n';
 
         function displayErrors(fb) {
