@@ -30,8 +30,7 @@
 '  pivot = array[end] #Firstly, pick the last element as the pivot each time..\n'+
 '  end_of_smaller_section = start - 1 #..then set up the imaginary borderline.\n'+
 '  for i in range(start, end):#go through the section of the array..\n'+
-'     #find a small element..\n'+
-'     if array[i] <= pivot:\n'+
+'     if array[i] <= pivot: #find a small element\n'+
 '       #make room for the small one by moving the borderline right..\n'+
 '       end_of_smaller_section += 1\n'+
 '       #put the small element in the small section (swap it with the first big element)..\n'+
@@ -41,12 +40,10 @@
 '  array[final_pivot_position], array[end] = array[end], array[final_pivot_position]\n'+
 '  return final_pivot_position\n'+
 'def quicksort(array, start, end):\n'+
-'  """Sorts the array in place. Divide and conquer: partitions the array, \n'+
-'  then sorts the smaller and bigger sections recursively."""\n'+
-'  # only bother to sort if the section has 2 or more items..\n'+
+'  """Sorts the array in place. Divide and conquer: partitions the array, sorts smaller and bigger sections recursively."""\n'+
+'  #Only bother to sort if the section has 2 or more items..\n'+
 '  if start < end:\n'+
-'      #put the pivot in the right place and get its index..\n'+
-'      pivot_index = partition(array, start, end)\n'+
+'      pivot_index = partition(array, start, end) #put the pivot in the right place and get its index.\n'+
 '      #quicksort the left (smaller) and right (bigger) subsections..\n'+
 '      quicksort(array, start, pivot_index-1)\n'+
 '      quicksort(array, pivot_index+1, end)\n';
